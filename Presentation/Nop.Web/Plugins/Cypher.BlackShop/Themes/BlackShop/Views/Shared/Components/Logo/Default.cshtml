@@ -1,0 +1,14 @@
+﻿@model LogoModel
+@inject BlackShopThemeSettings blackShopSettings
+@inject IPictureService pictureService
+
+@{ 
+    if (blackShopSettings.LogoImageId > 0)
+    {
+        Model.LogoPath = await pictureService.GetPictureUrlAsync(blackShopSettings.LogoImageId);
+    }
+}
+
+<a href="@Url.RouteUrl("Homepage")">
+    <img title="" alt="@Model.StoreName" src="@Model.LogoPath">
+</a>

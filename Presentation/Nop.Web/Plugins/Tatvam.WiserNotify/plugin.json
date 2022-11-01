@@ -1,0 +1,11 @@
+﻿{
+  "Group": "nopCypher",
+  "FriendlyName": "WiserNotify",
+  "SystemName": "Plugin.Tatvam.WiserNotify",
+  "Version": "1.0",
+  "SupportedVersions": [ "4.50" ],
+  "Author": "nopCypher team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Tatvam.WiserNotify.dll",
+  "Description": "This plugin allows you to Manage Notifications "
+}

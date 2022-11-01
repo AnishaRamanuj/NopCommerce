@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="English">
+  <LocaleResource Name="Nop.Plugin.Tatvam.Admin.Configuration.Title">
+    <Value>WiserNotify Configuration</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.APIKey">
+    <Value>API Key (Required)</Value>
+  </LocaleResource> 
+  <LocaleResource Name="Plugin.WiserNotify.Admin.Configuration.Field.APIKey.Required">
+    <Value>API Key Is Required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.APIKey.hint">
+    <Value>Add Your API Key, You Can Find Your API Key From Pixel Page</Value>
+  </LocaleResource> 
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.Enable">
+    <Value>Enable</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.Enable.hint">
+    <Value>Always Keep It Active If You Want to Use Our Service</Value>
+  </LocaleResource>
+   <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.PassWord">
+    <Value>PassWord</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.PassWord.hint">
+    <Value>PassWord</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.EnableLogs">
+    <Value>Enable Logs</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.EnableLogs.hint">
+    <Value>Optional If You Want To See WiserNotify Extension Log In System Logs </Value> 
+  </LocaleResource>
+  <LocaleResource Name="Admin.Plugins.WiserNotify.Saved">
+    <Value>WiserNotify Configure Saved</Value>
+  </LocaleResource> 
+  <LocaleResource Name="Nop.Plugin.Tatvam.Sitemap.Root.WiserNotify">
+    <Value>WiserNotify</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Sitemap.WiserNotify.Configuration">
+    <Value>Configuration</Value>
+  </LocaleResource>
+  <LocaleResource Name="Tatvam.WiserNotify.Configuration">
+    <Value>WiserNotify Configuration</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Sitemap.WiserNotify">
+    <Value>Wiser Notification</Value>
+  </LocaleResource>
+  <LocaleResource Name="WiserNotify.Admin.Configure.Processing">
+    <Value>Hold on, we're verifying API key And fetching the data...</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.WiserNotify.Admin.Sucess">
+    <Value>Congratulation! Your API key is verified And Also, Pixel tag is added successfully on your site. Now it's time to add notification.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.WiserNotify.Admin.Fail">
+    <Value> Your API key is wrong! Please get it from pixel page And try again.</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.Url">
+    <Value>URL</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Plugin.Tatvam.WiserNotify.Configure.Admin.Filed.Url.hint">
+    <Value>URL For WiserNotify API</Value>
+  </LocaleResource>
+
+
+</Language>

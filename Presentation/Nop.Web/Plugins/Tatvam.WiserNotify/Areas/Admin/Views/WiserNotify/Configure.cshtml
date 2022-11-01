@@ -1,0 +1,254 @@
+﻿@model WiserNotifySettingsModel
+@using Microsoft.AspNetCore.Html;
+@inject INopHtmlHelper NopHtml
+
+@{
+
+    Layout = "_AdminLayout";
+    //page title
+    ViewBag.PageTitle = T("Tatvam.WiserNotify.Configuration").Text;
+    //active menu item (system name)
+    NopHtml.SetActiveMenuItemSystemName("Tatvam.WiserNotify.Configuration");
+
+}
+
+<style>
+    .loader-main {
+        width: 100%;
+        position: fixed;
+        height: 100vh;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 9999;
+        background: rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0px 0px 30px 1px #103136 inset;
+        box-shadow: 0px 0px 30px 1px #103136 inset;
+        display: none;
+    }
+
+    .loader-sub {
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .loader {
+        margin-top: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, 0%);
+        margin-left: auto;
+        margin-right: auto;
+        vertical-align: middle;
+    }
+
+    .loader-main .text {
+        font-size: 24px;
+        color: #fff;
+    }
+
+    .loader-star {
+        position: absolute;
+        top: calc(50% - 12px);
+    }
+    /*LOADER-1*/
+
+    .loader-1 .loader-outter {
+        position: absolute;
+        border: 4px solid #645CFC;
+        border-left-color: transparent;
+        border-bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        -webkit-animation: loader-1-outter 1s cubic-bezier(.42, .61, .58, .41) infinite;
+        animation: loader-1-outter 1s cubic-bezier(.42, .61, .58, .41) infinite;
+    }
+
+    .loader-1 .loader-inner {
+        position: absolute;
+        border: 4px solid #212121;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        left: calc(50% - 20px);
+        top: calc(50% - 20px);
+        border-right: 0;
+        border-top-color: transparent;
+        -webkit-animation: loader-1-inner 1s cubic-bezier(.42, .61, .58, .41) infinite;
+        animation: loader-1-inner 1s cubic-bezier(.42, .61, .58, .41) infinite;
+    }
+
+    @@-webkit-keyframes loader-1-outter {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes loader-1-outter {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@-webkit-keyframes loader-1-inner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+        }
+    }
+
+    @@keyframes loader-1-inner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+        }
+    }
+</style>
+
+<div class="loader-main">
+    <div class="loader-sub">
+        <div class="text">@T("WiserNotify.Admin.Configure.Processing")</div>
+        <div class="loader loader-1">
+            <div class="loader-outter"></div>
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+</div>
+
+<div class="content-header clearfix">
+    <h1 class="float-left">
+        @T("Nop.Plugin.Tatvam.Admin.Configuration.Title")
+    </h1>
+</div>
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+<form asp-controller="WiserNotify" asp-action="Configure" method="post">
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <p>
+                            <b> Welcome to WiserNotify</b><br />
+                            Visit the   <a href="https://wisernotify.com/?aff=17l1gkl0jqzx35&utm_source=nopcypher_theme_plugin&&utm_ref_medium=nop" target="_blank">WiserNotify</a> website to know more about how it works, <a href="https://wisernotify.com/pricing/?aff=17l1gkl0jqzx35&utm_source=nopcypher_theme_plugin&&utm_ref_medium=noppricing">pricing</a> & <a href="https://wisernotify.com/features/?aff=17l1gkl0jqzx35&utm_source=nopcypher_theme_plugin&&utm_ref_medium=nopfeature">features</a>.<br />
+                            <br />
+                            <b>Must require:<br /></b>
+                            1.  Enable this extension <br />
+                            2. Log in to your WiserNotify account (click <a href="https://app.wisernotify.com/signup?aff=17l1gkl0jqzx35&utm_source=nopcypher_theme_plugin&&utm_ref_medium=nopcommerce"> <b> here</b></a> if you don't have an account).<br />
+                            3. Go to the <a href="https://app.wisernotify.com/pixel#native_app/?aff=17l1gkl0jqzx35&utm_source=nopcypher_theme_&utm_ref_medium==nopcommerce">Pixel page</a>, copy the API Key & Paste API Key in the below API key field.<br />
+                            4. Save
+
+                            <br />
+                        </p>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <nop-override-store-checkbox asp-for="Enable_OverrideForStore" asp-input="Enable" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                <nop-label asp-for="Enable" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="Enable" />
+                                <span asp-validation-for="Enable"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <nop-override-store-checkbox asp-for="APIKey_OverrideForStore" asp-input="APIKey" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                <nop-label asp-for="APIKey" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="APIKey" />
+                                <span id="APIKeyErrorMessage" style="display:none" class="field-validation-error">@T("Plugin.WiserNotify.Admin.Configuration.Field.APIKey.Required")</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <nop-override-store-checkbox asp-for="EnableLogs_OverrideForStore" asp-input="EnableLogs" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                <nop-label asp-for="EnableLogs" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="EnableLogs" />
+                                <span asp-validation-for="EnableLogs"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-9 offset-md-3">
+                                <button type="submit" name="save" id="verify-processing" class="btn btn-primary">@T("Admin.Common.Save")</button>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                $("#verify-processing").click(function (e) {
+                                    var apiKey = $("#@Html.IdFor(model => model.APIKey)").val();
+
+                                    if (apiKey == "") {
+                                        $("#APIKeyErrorMessage").show();
+                                        return false;
+                                    }
+                                    $(".loader-main").show();
+                                 });
+                             });
+                        </script>
+                        @if (!string.IsNullOrWhiteSpace(Model.SucessNotification))
+                        {
+                            <div class="alert alert-success" style="border-radius: 0.55rem;" role="alert">
+                                @Model.SucessNotification
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.FailNotification))
+                        {
+                            <div class="alert alert-danger" style="border-radius: 0.55rem;" role="alert">
+                                @Model.FailNotification
+                            </div>
+                        }
+                    </div>
+                    <div class="card-header">
+                        <b>Additional Information:</b>
+                    </div>
+                    <p class="card-body">
+                        Once you verify your API key, WiserNotify extension will pull the latest <b> 30 orders & review data </b>. It also starts pulling new orders and reviews as well.<br /><br />
+                        &nbsp;&nbsp; - This extension adds WiserNotify pixel code in your website's head section, so you don't have to add it manually.<br />
+                        &nbsp;&nbsp; - Next step, you need to <a href="https://support.wisernotify.com/how-to-add-purchased-notification/?aff=17l1gkl0jqzx35&utm_source=nopcypher_theme_plugin&&utm_ref_medium=nopcommerce">add the notification </a> to your WiserNotify account & start to display it on your website.<br /><br />
+                        For any issues or support, visit <a href="https://support.wisernotify.com/?aff=17l1gkl0jqzx35&utm_source=nopcypher_theme_plugin&&utm_ref_medium=nopcommerce">our knowledge-based portal </a>  or  email us at <a href="mailto:support@wisernotify.com">support@wisernotify.com</a>. Also, you can talk with our live chat support team.
+                    </p>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+

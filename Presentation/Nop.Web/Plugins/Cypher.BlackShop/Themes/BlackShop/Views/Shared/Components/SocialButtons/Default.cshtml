@@ -1,0 +1,70 @@
+﻿@model SocialModel
+@inject BlackShopThemeSettings blackShopSettings
+
+<ul class="networks">
+    @if (!string.IsNullOrEmpty(Model.FacebookLink))
+    {
+        <li class="facebook">
+            <a href="@Model.FacebookLink" target="_blank">
+                <span class="bs-facebook"></span>
+            </a>
+        </li>
+    }
+    @if (!string.IsNullOrEmpty(Model.TwitterLink))
+    {
+        <li class="twitter">
+            <a href="@Model.TwitterLink" target="_blank">
+                <span class="bs-twitter"></span>
+            </a>
+        </li>
+    }
+    @if (Model.NewsEnabled)
+    {
+        <li class="rss">
+            <a href="@Url.RouteUrl("NewsRSS", new {languageId = Model.WorkingLanguageId})">
+                <span class="bs-rss"></span>
+            </a>
+        </li>
+    }
+    @if (!string.IsNullOrEmpty(Model.YoutubeLink))
+    {
+        <li class="youtube">
+            <a href="@Model.YoutubeLink" target="_blank">
+                <span class="bs-youtube"></span>
+            </a>
+        </li>
+    }
+    @if (!string.IsNullOrEmpty(blackShopSettings.PinterestURL))
+    {
+        <li class="pintrest">
+            <a href="@blackShopSettings.PinterestURL" target="_blank">
+                <span class="bs-pintrest"></span>
+            </a>
+        </li>
+    }
+    @if (!string.IsNullOrEmpty(blackShopSettings.VimeoURL))
+    {
+        <li class="vimeo">
+            <a href="@blackShopSettings.VimeoURL" target="_blank">
+                <span class="bs-vimeo"></span>
+            </a>
+        </li>
+    }
+    @if (!string.IsNullOrEmpty(blackShopSettings.InstagramURL))
+    {
+        <li class="instagram">
+            <a href="@blackShopSettings.InstagramURL" target="_blank">
+                <span class="bs-instagram"></span>
+            </a>
+        </li>
+    }
+    @if (!string.IsNullOrEmpty(blackShopSettings.LinkedInURL))
+    {
+        <li class="linkedin">
+            <a href="@blackShopSettings.LinkedInURL" target="_blank">
+                <span class="bs-linkedin"></span>
+            </a>
+        </li>
+    }
+
+</ul>

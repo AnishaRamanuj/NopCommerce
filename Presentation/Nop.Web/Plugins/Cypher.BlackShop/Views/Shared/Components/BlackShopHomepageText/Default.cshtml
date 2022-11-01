@@ -1,0 +1,8 @@
+﻿@model BlackShopModel
+
+@if (!string.IsNullOrEmpty(Model.HomePageText))
+{
+    <div class="bs_service_main_section">
+        @Html.Raw(Model.HomePageText)
+    </div>
+}

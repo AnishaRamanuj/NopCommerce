@@ -1,0 +1,12 @@
+﻿@model string
+@inject BlackShopThemeSettings  blackShopSettings
+@{
+    NopHtml.AddCssFileParts(Model, "", false);
+}
+
+@if (!string.IsNullOrEmpty(blackShopSettings.CustomHeadStyle))
+{
+    <style type="text/css">
+        @Html.Raw(blackShopSettings.CustomHeadStyle)
+    </style>
+}
