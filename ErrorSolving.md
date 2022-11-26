@@ -4,6 +4,7 @@
 
 -- Run following query
 
+
 ```mysql
 Update Setting set Value= 'False' where Name = 'captchasettings.enabled'
 ```
