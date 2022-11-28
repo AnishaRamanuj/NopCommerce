@@ -7,7 +7,7 @@
     {
         /// <summary>
         /// Gets or sets the entity identifier
-        /// </summary>
+        // </summary>
         public int Id { get; set; }
     }
 }
