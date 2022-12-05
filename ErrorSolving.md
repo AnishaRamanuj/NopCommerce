@@ -2,7 +2,7 @@
 
 ## Disable captcha from Database when accidently Signed-out
 
--- Run following query
+Run following query
 
 
 ```mysql
@@ -23,3 +23,29 @@ Nop.Web > Views > Common > ContactUs.cshtml
 ```csharp
 Admin panel > Configurations > Languages > Edit > String Resource
 ```
+
+## Accidently removed access control List from Admin panel
+
+check this on your SQL Server
+
+```mysql
+select * from PermissionRecord
+where SystemName='ManageACL'
+```
+
+the record exists or not , if not exist then please add this thing into the Database,
+
+- If exist then please check that id with PermissionRecord_Role_Mapping table
+```mysql
+select * from [dbo].[PermissionRecord_Role_Mapping]
+```
+
+- if not exist add this
+```mysql
+INSERT INTO PermissionRecord_Role_Mapping(PermissionRecord_Id,CustomerRole_Id) VALUES (39, 1);
+```
+
+also check with the Direct URL
+<https://yourstore.com/Admin/Security/Permissions>
+
+
