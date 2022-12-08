@@ -15,6 +15,7 @@ I would split all nopCommerce classes related to migrations into three categorie
  - or some files representing default values related to the migration process.
 
 #### 2. The next category is related to database schema migration. 
+
 It is the “SchemaMigration” class that is placed in the Installation folder. This class contains a list of tables to be created in the database. You can see this class in “Nop.Data” and in the plugins that require adding new tables to the database. Such as the “PickupInStore” plugin that requires a pickup points table or the “Avalara” plugin that creates a tax logging table.
 
 The remarkable point about the schema migration class is that it has the MigrationProcessType set to “Installation”, which means that this migration is only run on the nopCommerce installation process;
