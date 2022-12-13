@@ -24,6 +24,7 @@ To do this, let’s find the Nop.Core project and the Domain directory there.
 
 11. And we will also store the date and time when the support request was updated. This will actually be the date when the support request was replied to. So the last field is **UpdatedOnUtc** with the DateTime type.
 
+![Annotation 2022-12-12 181933](https://user-images.githubusercontent.com/98104395/207238093-ecaf7b54-e171-4d5f-a964-524154b9390f.png)
 
 
 That’s all! Our entity is ready. Let’s just remove unused references.
@@ -59,7 +60,11 @@ That’s all! Now we have an entity builder set up.
 3. Let’s run our solution. And then, let’s look at the database. We will see that the database now contains the new table named **SupportRequest**. The new table is right here. It has seven columns. The **Id** column is a primary key. The **CustomerId** and **StoreId** columns are foreign keys.
 
 
+![Annotation 2022-12-13 112733](https://user-images.githubusercontent.com/98104395/207238279-e33c4381-726e-421d-b748-514fd181831d.png)
 
+
+Refresh Database and check.
+![Annotation 2022-12-13 112933](https://user-images.githubusercontent.com/98104395/207238553-d41a31e4-a805-45d0-99d4-427dfa5b452f.png)
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 Let’s summarize what has been done. To add a new table to the database:
