@@ -48,4 +48,8 @@ INSERT INTO PermissionRecord_Role_Mapping(PermissionRecord_Id,CustomerRole_Id) V
 also check with the Direct URL
 <https://yourstore.com/Admin/Security/Permissions>
 
-
+## webManifestfile issue
+This is the basic path issue. To solve this go to,
+1. **Setting > all settings** and find **"CommonSettings.FaviconAndAppIconsHeadCode"** and change the path in the all required places.
+2. **wwwroot > icons > icons_0 > site.webmanifest.xml** and change the path in the all required places.
+3.  **wwwroot > icons > icons_0 > html_code.html** and change the path in the all required places.
